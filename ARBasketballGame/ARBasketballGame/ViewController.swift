@@ -15,9 +15,11 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var addHoopButton: UIButton!
     @IBOutlet weak var resetHoopBtn: UIButton!
+//    @IBOutlet weak var Slider: UISlider!
     
     
     var currentNode: SCNNode!
+    var userForce: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +29,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
 //        sceneView.showsStatistics = true
         
+//        Slider.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi/2))
+//        Slider.tintColor = .red
         // Create a new scene
         let scene = SCNScene()
         
@@ -69,7 +73,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let physicsBody = SCNPhysicsBody(type: .dynamic, shape: physicsShape)
         
         ballNode.physicsBody = physicsBody
-        let forceVector:Float = 10
+        let forceVector:Float = 6
         ballNode.physicsBody?.applyForce(SCNVector3(x: cameraPosition.x * forceVector, y: cameraPosition.y * forceVector, z: cameraPosition.z*forceVector), asImpulse: true)
         
         sceneView.scene.rootNode.addChildNode(ballNode)

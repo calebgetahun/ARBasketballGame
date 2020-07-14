@@ -1,4 +1,6 @@
 # ARBasketballGame
-AR Basketball Game that enables user to set a hoop in any environment they like and play basketball using their phone camera
+AR Basketball Game that enables the user to set a hoop in any environment they'd like and play basketball using their phone camera
 
-Open in Xcode and build using physical device and play on!
+Open in Xcode
+Build using physical device (iOS)
+Play on!
